@@ -5,12 +5,13 @@ Adaptado de main.py para funcionar como API
 import json
 import datetime
 import requests
+import os
 from pypdf import PdfReader, PdfWriter
 from pypdf.generic import NameObject, BooleanObject, NumberObject
 
 # Configuración (se carga desde variables de entorno en producción)
-API_KEY_NYC = "d5e07d1f59074591b9e1a70610ed8069"  # Tu API key
-APP_TOKEN_SOCRATA = "CKHVd7U76JgGB0kTjH0WCA2G8"  # Tu token
+API_KEY_NYC = os.environ.get('NYC_API_KEY', 'd5e07d1f59074591b9e1a70610ed8069')
+APP_TOKEN_SOCRATA = os.environ.get('SOCRATA_TOKEN', 'CKHVd7U76JgGB0kTjH0WCA2G8')
 
 # Cargar configuración desde archivo
 import os
