@@ -27,36 +27,33 @@ wheels/
 *.db
 *.sqlite
 *.sqlite3
-
 # Environment
 .env
 .venv
 config_local.json
-
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-
 # OS
 .DS_Store
 Thumbs.db
-
 # Logs
 *.log
-
 # Temporary files
 /tmp/
 temp/
 *.tmp
-
 # PDFs generados (no subir al repo)
 output/
 generated/
-
 # Secrets (IMPORTANTE)
 *secret*
 *SECRET*
 license.key
+# Secrets y configuración
+backend/config.json
+*.pyc
+*.pyo
