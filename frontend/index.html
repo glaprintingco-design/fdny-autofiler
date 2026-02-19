@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDNY Auto-Filer Pro - Web Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <div class="logo">
+                <h1>🚒 FDNY Auto-Filer</h1>
+                <p class="subtitle">Professional Document Generator</p>
+            </div>
+            
+            <div class="login-box">
+                <h2>Enter License Key</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input 
+                            type="text" 
+                            id="licenseInput" 
+                            placeholder="XXXX-XXXX-XXXX-XXXX" 
+                            required
+                            autocomplete="off"
+                        >
+                        <button type="submit" class="btn-primary">
+                            <span>Activate</span>
+                        </button>
+                    </div>
+                    <p class="hint">Don't have a license? <a href="/cdn-cgi/l/email-protection#fd8e9c91988ebd9b9993849c8889929b9491988fd39e9290">Contact Sales</a></p>
+                </form>
+                
+                <div id="loginError" class="error-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application Screen -->
+    <div id="appScreen" class="screen">
+        <header class="app-header">
+            <div class="header-left">
+                <h1>🚒 FDNY Auto-Filer Pro</h1>
+            </div>
+            <div class="header-right">
+                <div class="credits-badge" id="creditsDisplay">
+                    <span class="credits-label">Credits:</span>
+                    <span class="credits-value" id="creditsValue">--/--</span>
+                </div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="container">
+                <!-- Step 1: BIN Input -->
+                <section class="card">
+                    <h2 class="step-title">Step 1: Enter Property BIN</h2>
+                    <div class="bin-input-group">
+                        <input 
+                            type="text" 
+                            id="binInput" 
+                            placeholder="Enter BIN Number (e.g., 1001234)" 
+                            class="input-large"
+                        >
+                        <button onclick="loadBINData()" class="btn-primary">
+                            Load Data
+                        </button>
+                    </div>
+                    <div id="binInfo" class="bin-info"></div>
+                </section>
+
+                <!-- Step 2: Device Table -->
+                <section class="card">
+                    <h2 class="step-title">Step 2: Add Devices (Optional for A-433)</h2>
+                    
+                    <div class="device-inputs">
+                        <div class="input-row">
+                            <select id="floorSelect" class="select-input">
+                                <option value="">Select Floor...</option>
+                            </select>
+                            
+                            <select id="categorySelect" class="select-input" onchange="updateDeviceOptions()">
+                                <option value="">Select Category...</option>
+                                <option value="Initiating">Initiating</option>
+                                <option value="Supervisory">Supervisory</option>
+                                <option value="Control">Control</option>
+                                <option value="Signals">Signals</option>
+                                <option value="Communication">Communication</option>
+                                <option value="Firepanel">Fire Panels</option>
+                            </select>
+                            
+                            <select id="deviceSelect" class="select-input">
+                                <option value="">Select Device...</option>
+                            </select>
+                            
+                            <input 
+                                type="number" 
+                                id="quantityInput" 
+                                placeholder="Qty" 
+                                min="1" 
+                                value="1"
+                                class="qty-input"
+                            >
+                            
+                            <button onclick="addDevice()" class="btn-add">
+                                + Add
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="device-table-container">
+                        <table id="deviceTable" class="device-table">
+                            <thead>
+                                <tr>
+                                    <th>Floor</th>
+                                    <th>Device Type</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="deviceTableBody">
+                                <tr class="empty-state">
+                                    <td colspan="5">No devices added yet. Add devices to generate A-433 form.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Step 3: Generate Documents -->
+                <section class="card">
+                    <h2 class="step-title">Step 3: Generate Documents</h2>
+                    
+                    <div class="generate-controls">
+                        <button onclick="generateDocuments()" class="btn-generate" id="generateBtn">
+                            <span class="btn-icon">📄</span>
+                            <span>Generate All Documents</span>
+                        </button>
+                    </div>
+
+                    <div id="progressBar" class="progress-bar hidden">
+                        <div class="progress-fill"></div>
+                        <span class="progress-text">Generating documents...</span>
+                    </div>
+
+                    <div id="downloadSection" class="download-section hidden">
+                        <h3>✅ Documents Ready!</h3>
+                        <div class="download-buttons" id="downloadButtons"></div>
+                    </div>
+                </section>
+
+                <!-- Console Log -->
+                <section class="card console-card">
+                    <h2 class="step-title">Activity Log</h2>
+                    <div id="console" class="console"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <

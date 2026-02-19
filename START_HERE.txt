@@ -1,0 +1,115 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║   🚒 FDNY AUTO-FILER PRO - WEB EDITION                           ║
+║   Sistema Profesional de Generación de Documentos FDNY           ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📦 CONTENIDO DEL PAQUETE:
+
+  ├── frontend/          → Aplicación web (HTML/CSS/JS)
+  ├── backend/           → API Python + Base de datos
+  ├── templates/         → PDFs base (TM-1, A-433, B-45)
+  ├── docs/              → Documentación completa
+  └── README.md          → Documentación principal
+
+═══════════════════════════════════════════════════════════════════
+
+🚀 INICIO RÁPIDO (DESARROLLO LOCAL):
+
+  1. Abrir terminal en esta carpeta
+  
+  2. Ejecutar:
+     ./quickstart.sh
+     
+  3. Seguir las instrucciones en pantalla
+  
+  4. Abrir navegador en:
+     http://localhost:8000
+
+═══════════════════════════════════════════════════════════════════
+
+🌐 DEPLOYMENT EN INTERNET:
+
+  Leer: docs/DEPLOYMENT.md
+  
+  Resumen:
+  - Frontend → GitHub Pages (gratis)
+  - Backend → Vercel o Railway (gratis)
+  - Total: $0/mes
+
+═══════════════════════════════════════════════════════════════════
+
+🔑 SISTEMA DE LICENCIAS:
+
+  • Cada cliente necesita una licencia única
+  • Formato: XXXX-XXXX-XXXX-XXXX
+  • Límites por licencia:
+    - 50 documentos/mes (configurable)
+    - 15 documentos/hora (rate limit)
+    - 3 dispositivos máximo
+  
+  Crear licencias:
+  cd backend
+  python3 admin.py
+
+═══════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTACIÓN:
+
+  README.md               → Información general
+  docs/DEPLOYMENT.md      → Guía paso a paso de deployment
+  backend/README.md       → Documentación del API
+  CHANGELOG.md            → Historial de versiones
+
+═══════════════════════════════════════════════════════════════════
+
+✅ CARACTERÍSTICAS PRINCIPALES:
+
+  ✓ Interfaz web profesional y responsive
+  ✓ Integración con NYC Open Data API
+  ✓ Generación automática de:
+    - TM-1 (Technical Management Application)
+    - A-433 (Fire Alarm Inspection)
+    - B-45 (Inspection Request)
+  ✓ Sistema de licencias robusto
+  ✓ Control de créditos mensuales
+  ✓ Protección contra compartición
+  ✓ Auditoría completa de uso
+  ✓ Base de datos SQLite
+  ✓ API RESTful documentada
+
+═══════════════════════════════════════════════════════════════════
+
+🆘 SOPORTE Y AYUDA:
+
+  1. Leer README.md completamente
+  2. Revisar docs/DEPLOYMENT.md
+  3. Ejecutar quickstart.sh para pruebas locales
+  4. Verificar que todos los archivos estén presentes
+  
+  Troubleshooting común:
+  - "License invalid" → Crear licencia con admin.py
+  - "API error" → Verificar backend está corriendo
+  - "PDF not generating" → Verificar templates/ existe
+
+═══════════════════════════════════════════════════════════════════
+
+💡 PRÓXIMOS PASOS:
+
+  1. ✅ Leer README.md
+  2. ✅ Probar localmente con quickstart.sh
+  3. ✅ Crear tus primeras licencias
+  4. ✅ Seguir docs/DEPLOYMENT.md para publicar
+  5. ✅ Compartir con tus clientes
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 ¡LISTO PARA USAR!
+
+Tu sistema profesional de generación de documentos FDNY está
+completo y listo para deployment.
+
+Desarrollado con ❤️ para contractors FDNY
+
+═══════════════════════════════════════════════════════════════════

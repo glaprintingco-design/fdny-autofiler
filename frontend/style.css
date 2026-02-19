@@ -1,0 +1,609 @@
+:root {
+    --primary-color: #E63946;
+    --primary-dark: #C52A35;
+    --secondary-color: #457B9D;
+    --success-color: #2A9D8F;
+    --warning-color: #F4A261;
+    --danger-color: #E76F51;
+    --dark-bg: #1D3557;
+    --light-bg: #F1FAEE;
+    --text-dark: #1D3557;
+    --text-light: #FFFFFF;
+    --border-color: #DDD;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1D3557 0%, #457B9D 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* ============================================
+   SCREENS & LAYOUT
+   ============================================ */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* ============================================
+   LOGIN SCREEN
+   ============================================ */
+#loginScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.logo .subtitle {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+}
+
+.login-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+}
+
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.hint {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.hint a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.error-message {
+    background: #FEE;
+    color: var(--danger-color);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+    display: none;
+    font-size: 0.9rem;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-logout {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.3);
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5);
+}
+
+.btn-add {
+    background: var(--success-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-add:hover {
+    background: #238276;
+    transform: translateY(-1px);
+}
+
+.btn-generate {
+    background: linear-gradient(135deg, var(--primary-color), #C52A35);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+}
+
+.btn-generate:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+
+.btn-generate:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   APP HEADER
+   ============================================ */
+.app-header {
+    background: white;
+    padding: 20px 40px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.credits-badge {
+    background: linear-gradient(135deg, var(--success-color), #238276);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.credits-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.app-main {
+    padding: 40px 20px;
+    min-height: calc(100vh - 80px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.step-title {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* ============================================
+   BIN INPUT SECTION
+   ============================================ */
+.bin-input-group {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.input-large {
+    flex: 1;
+    padding: 16px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: border-color 0.3s;
+}
+
+.input-large:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.bin-info {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--success-color);
+    display: none;
+}
+
+.bin-info.show {
+    display: block;
+}
+
+.bin-info h3 {
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.bin-info p {
+    margin: 6px 0;
+    color: #555;
+}
+
+/* ============================================
+   DEVICE INPUT SECTION
+   ============================================ */
+.device-inputs {
+    margin-bottom: 24px;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1.2fr 2fr 0.8fr 0.8fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.select-input, .qty-input {
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.select-input:focus, .qty-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* ============================================
+   DEVICE TABLE
+   ============================================ */
+.device-table-container {
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.device-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.device-table thead {
+    background: var(--dark-bg);
+    color: white;
+}
+
+.device-table th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.device-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s;
+}
+
+.device-table tbody tr:hover {
+    background: #F9F9F9;
+}
+
+.device-table td {
+    padding: 14px 16px;
+}
+
+.empty-state {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+.btn-delete {
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-delete:hover {
+    background: #D65A44;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   GENERATE & DOWNLOAD SECTION
+   ============================================ */
+.generate-controls {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.progress-bar {
+    background: #EEE;
+    height: 50px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    width: 0%;
+    transition: width 0.5s;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.download-section {
+    background: #F0FFF4;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--success-color);
+}
+
+.download-section h3 {
+    color: var(--success-color);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    background: white;
+    color: var(--text-dark);
+    border: 2px solid var(--success-color);
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-download:hover {
+    background: var(--success-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   CONSOLE LOG
+   ============================================ */
+.console-card {
+    background: #1E1E1E;
+}
+
+.console-card .step-title {
+    color: white;
+    border-bottom-color: var(--success-color);
+}
+
+.console {
+    background: #0D0D0D;
+    color: #0F0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.console p {
+    margin: 4px 0;
+}
+
+.console .error {
+    color: #FF4444;
+}
+
+.console .success {
+    color: #00FF00;
+}
+
+.console .warning {
+    color: #FFAA00;
+}
+
+/* ============================================
+   LOADING OVERLAY
+   ============================================ */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-overlay.hidden {
+    display: none;
+}
+
+.spinner {
+    border: 4px solid rgba(255,255,255,0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.hidden {
+    display: none !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .app-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .bin-input-group {
+        flex-direction: column;
+    }
+    
+    .download-buttons {
+        flex-direction: column;
+    }
+}

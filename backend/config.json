@@ -1,0 +1,62 @@
+{
+  "api_keys": {
+    "nyc_open_data_key": "d5e07d1f59074591b9e1a70610ed8069",
+    "nyc_socrata_token": "CKHVd7U76JgGB0kTjH0WCA2G8"
+  },
+  "fire_alarm_company": {
+    "Company Name": "Linkage Fire and Security Corp",
+    "Address": "152 Fulton Street",
+    "City": "White Plains",
+    "State": "NY",
+    "Zip": "10606",
+    "Phone": "914-339-0997",
+    "Email": "info@linkagefire.com",
+    "Fax": "",
+    "First Name": "David",
+    "Last Name": "Mercado",
+    "Reg No": "92122803",
+    "COF S97": "92213222",
+    "Expiration": "09/20/2026"
+  },
+  "architect_applicant": {
+    "Company Name": "CA Engineering LLC",
+    "Address": "600 Eagleview Blvd Suite 300",
+    "City": "Exton",
+    "State": "PA",
+    "Zip": "19341",
+    "Phone": "(484) 359-7229",
+    "Email": "craig@caengineering.com",
+    "First Name": "Craig",
+    "Last Name": "Aukett",
+    "License No": "098764-1",
+    "Role": "PE"
+  },
+  "electrical_contractor": {
+    "Company Name": "KNC Electric",
+    "Address": "187-27 Linden Blvd",
+    "City": "Jamaica",
+    "State": "NY",
+    "Zip": "11412",
+    "Phone": "718-527-7180",
+    "Email": "Clement@KNCelectric.com",
+    "First Name": "Clement",
+    "Last Name": "Chambers",
+    "License No": "11564",
+    "Expiration": "05/31/2026"
+  },
+  "technical_defaults": {
+    "Manufacturer": "Kidde",
+    "Approval": "6229",
+    "WireGauge": "#16",
+    "WireType": "FPLP-NYC Cert"
+  },
+  "central_station": {
+    "Company Name": "Affiliated Central Inc",
+    "CS Code": "886-13",
+    "Address": "354 Neptune Ave",
+    "City": "Brooklyn",
+    "State": "NY",
+    "Zip": "11235",
+    "Phone": "718-332-6100"
+  }
+}

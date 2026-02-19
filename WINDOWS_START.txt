@@ -1,0 +1,153 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║   🚒 FDNY AUTO-FILER - GUÍA PARA WINDOWS                         ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📋 REQUISITOS PREVIOS:
+
+  ✅ Windows 10/11
+  ✅ Python 3.8 o superior instalado
+  
+  ¿No tienes Python?
+  → Descargar de: https://www.python.org/downloads/
+  → IMPORTANTE: Marcar "Add Python to PATH" durante instalación
+
+═══════════════════════════════════════════════════════════════════
+
+🚀 INICIO RÁPIDO - OPCIÓN 1 (Automático):
+
+  1. Hacer doble clic en: quickstart.bat
+  
+  2. Seguir las instrucciones en la ventana
+  
+  3. ¡Listo!
+
+═══════════════════════════════════════════════════════════════════
+
+🚀 INICIO RÁPIDO - OPCIÓN 2 (Manual):
+
+  PASO 1: Instalar dependencias
+  ─────────────────────────────
+  1. Abrir CMD o PowerShell en esta carpeta
+  2. Ejecutar:
+     cd backend
+     pip install -r requirements.txt
+
+  PASO 2: Crear licencias iniciales
+  ──────────────────────────────────
+  1. Ejecutar:
+     python setup_initial_licenses.py
+  
+  2. Guardar las claves de licencia generadas
+
+  PASO 3: Iniciar el backend
+  ───────────────────────────
+  1. En la carpeta backend, ejecutar:
+     python api/main.py
+  
+  2. Debe decir: "Server running on http://localhost:5000"
+  
+  3. ⚠️ NO CERRAR esta ventana
+
+  PASO 4: Iniciar el frontend
+  ────────────────────────────
+  1. Abrir OTRA terminal/CMD
+  2. Ir a la carpeta frontend
+  3. Ejecutar:
+     python -m http.server 8000
+  
+  4. Abrir navegador en: http://localhost:8000
+  
+  5. ⚠️ NO CERRAR esta ventana
+
+  PASO 5: ¡Probar la aplicación!
+  ───────────────────────────────
+  1. En el navegador, ingresar una clave de licencia
+  2. Probar con BIN de ejemplo: 1001234
+  3. Generar documentos
+
+═══════════════════════════════════════════════════════════════════
+
+🔑 GESTIONAR LICENCIAS:
+
+  1. Abrir terminal en la carpeta 'backend'
+  
+  2. Ejecutar:
+     python admin.py
+  
+  3. Seleccionar opción del menú:
+     - 1: Crear nueva licencia
+     - 2: Listar todas las licencias
+     - 3: Ver detalles de licencia
+     - etc.
+
+═══════════════════════════════════════════════════════════════════
+
+⚠️ PROBLEMAS COMUNES:
+
+  "Python no encontrado"
+  ────────────────────────
+  → Instalar Python desde python.org
+  → Asegurarse de marcar "Add to PATH"
+  → Reiniciar la terminal después de instalar
+
+  "pip no encontrado"
+  ───────────────────
+  → Ejecutar: python -m ensurepip --upgrade
+  → O reinstalar Python
+
+  "ModuleNotFoundError"
+  ─────────────────────
+  → Asegurarse de ejecutar: pip install -r requirements.txt
+  → Verificar que estás en la carpeta correcta
+
+  "Port 5000 already in use"
+  ──────────────────────────
+  → Otro programa está usando el puerto
+  → Cerrar ese programa o cambiar puerto en api/main.py
+
+  "Frontend no carga"
+  ───────────────────
+  → Verificar que el backend está corriendo
+  → Abrir http://localhost:8000 (NO localhost:5000)
+  → Verificar en app.js que la URL sea http://localhost:5000/api
+
+═══════════════════════════════════════════════════════════════════
+
+🌐 DEPLOYMENT EN INTERNET:
+
+  Una vez probado localmente, puedes publicarlo GRATIS:
+  
+  → Leer: docs/DEPLOYMENT.md
+  
+  Pasos resumidos:
+  1. Crear cuenta en GitHub
+  2. Subir código
+  3. Activar GitHub Pages (frontend)
+  4. Deploy backend en Vercel (gratis)
+  5. Actualizar URL en app.js
+  6. ¡Listo!
+
+═══════════════════════════════════════════════════════════════════
+
+📞 ¿NECESITAS AYUDA?
+
+  1. Leer README.md
+  2. Revisar docs/DEPLOYMENT.md
+  3. Verificar que Python está instalado correctamente
+  4. Asegurarte de tener todas las dependencias
+
+═══════════════════════════════════════════════════════════════════
+
+💡 TIPS PARA WINDOWS:
+
+  • Usa PowerShell en vez de CMD (más moderno)
+  • Para abrir terminal en una carpeta:
+    Shift + Click derecho → "Abrir PowerShell aquí"
+  • Para detener el servidor: Ctrl + C
+  • Para ver puertos usados: netstat -ano | findstr :5000
+
+═══════════════════════════════════════════════════════════════════
+
+¡Éxito! 🎉
