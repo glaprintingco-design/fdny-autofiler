@@ -1,0 +1,32 @@
+{
+  "api_keys": {
+    "nyc_open_data_key": "TU_API_KEY_AQUI",
+    "nyc_socrata_token": "TU_TOKEN_AQUI"
+  },
+  "fire_alarm_company": {
+    "Company Name": "Tu Empresa",
+    "Address": "Tu Dirección",
+    "City": "Ciudad",
+    "State": "Estado",
+    "Zip": "Código Postal",
+    "Phone": "Teléfono",
+    "Email": "email@ejemplo.com",
+    "First Name": "Nombre",
+    "Last Name": "Apellido",
+    "Reg No": "Número Registro",
+    "COF S97": "Certificado",
+    "Expiration": "MM/DD/YYYY"
+  },
+  "architect_applicant": {
+    "Company Name": "Arquitecto/Ingeniero",
+    "License No": "Licencia"
+  },
+  "electrical_contractor": {
+    "Company Name": "Contratista Eléctrico",
+    "License No": "Licencia"
+  },
+  "central_station": {
+    "Company Name": "Central de Monitoreo",
+    "CS Code": "Código"
+  }
+}

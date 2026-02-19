@@ -5,8 +5,7 @@ from datetime import datetime, timedelta
 import os
 
 DATABASE_PATH = os.path.join(os.path.dirname(__file__), 'licenses.db')
-SECRET_KEY = b"FDNY_AUTO_FILER_SECRET_KEY_2026_CHANGE_THIS"  # CAMBIAR EN PRODUCCIÓN
-
+SECRET_KEY = os.environ.get('SECRET_KEY', 'FDNY_AUTO_FILER_SECRET_KEY_2026_CHANGE_THIS').encode()
 class LicenseDB:
     def __init__(self):
         self.init_database()
