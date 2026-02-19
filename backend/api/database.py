@@ -296,7 +296,11 @@ class LicenseDB:
         return affected
 
 # Instancia global
-db = LicenseDB()
+try:
+    db = LicenseDB()
+except:
+    # Fallback: crear instancia sin inicializar DB
+    db = None
 
 # ============================================
 # FUNCIONES DE ADMINISTRACIÓN
